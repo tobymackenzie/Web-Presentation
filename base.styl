@@ -138,7 +138,7 @@ img
 //--
 //=accessibility
 //--
-.screenreaderonly
+.screenReaderOnly
 	display: inline
 	position: absolute
 	top: -9000px
@@ -147,8 +147,9 @@ img
 	&:before
 		display: none
 		content: ''
-.linkjump
-	@extends .screenreaderonly
+.linkJump
+.itemLinkJump
+	@extends .screenReaderOnly
 	&:active
 	&:focus
 	&:hover
@@ -157,11 +158,7 @@ img
 		position: static
 		z-index: 9999
 		font-size: inherit
-.listlinksjump
-	a
-		@extends .linkjump
-.pagejumpto
-	@extends .listlinksjump
+.pageJumpTo
 	position: absolute
 	top: 0
 	left: 0
@@ -174,16 +171,16 @@ img
 .clear
 	clear: both
 //-clear all floats after div
-.clearafter
+.clearAfter
 	zoom: 1 //-for UA IE 7 and below
 	&:after
 		display: block
 		clear: both
 		height: 0
 		content: " "
-.floatright
+.floatRight
 	float: right
-.floatleft
+.floatLeft
 	float: left
 
 
@@ -192,14 +189,14 @@ img
 //=====/
 
 body
-	@extends .clearafter
+	@extends .clearAfter
 	margin: auto //-center on older browsers
 
 //--
 //=columns
 //--
 //-make columns equal height in older browsers
-.ua-old .columns.equalheight
+.ua-old .columns.equalHeight
 	overflow: hidden
 	.column
 		float: left
